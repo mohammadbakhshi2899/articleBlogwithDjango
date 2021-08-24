@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 {% load static %}
+{% block title %}
+articles
+{% endblock %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,11 +11,10 @@
 </head>
 <body>
     <h1>it is the articles list</h1>
+    <a href="{% url 'articles:list' %}">LOGO</a>
     {% for article in listArticles %}
     <h2>
-
-        <a href="#">{{article.title}}</a>
-
+        <a href="{% url 'articles:details' slug=article.slug %}">{{article.title}}</a>
     </h2>
     <p>{{article.snippet}}</p>
     <p>{{article.date}}</p>
