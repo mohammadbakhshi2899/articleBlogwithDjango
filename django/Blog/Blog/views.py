@@ -8,4 +8,5 @@ def about(request):
 def home(request):
     # return HttpResponse('home')
     return render(request, 'home.html')
+# /home/mohammad/PycharmProjects/pythonProject/Django/Blog/django/Blog/templates/home.html
 

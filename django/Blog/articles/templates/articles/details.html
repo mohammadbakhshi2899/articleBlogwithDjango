@@ -10,5 +10,18 @@
     <h2>{{ article.slug }}</h2>
     <p>{{ article.body }}</p>
     <h3>{{ article.date }}</h3>
+    <nav>
+
+        <ul>
+
+            <li>
+                <form method="post" action="{% url 'accounts:logout' %}">
+                    <input type="submit" value="logout">
+                </form>
+            </li>
+
+        </ul>
+
+    </nav>
 </body>
 </html>

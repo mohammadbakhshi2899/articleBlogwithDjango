@@ -12,6 +12,28 @@ articles
 <body>
     <h1>it is the articles list</h1>
     <a href="{% url 'articles:list' %}">LOGO</a>
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+            <li>
+                <form method="post" action="{% url 'accounts:logout' %}">
+                    <input type="submit" value="logout">
+                </form>
+            </li>
+            <li>
+                <a href="{% url 'articles:publish' %}">publish article</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'accounts:login' %}"> login </a>
+            </li>
+            <li>
+                <a href="{% url 'accounts:signup' %}"> signup </a>
+            </li>
+
+            {% endif %}
+        </ul>
+    </nav>
     {% for article in listArticles %}
     <h2>
         <a href="{% url 'articles:details' slug=article.slug %}">{{article.title}}</a>

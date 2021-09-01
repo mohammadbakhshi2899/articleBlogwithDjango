@@ -7,6 +7,14 @@
 <body>
     <h1>it is the home page</h1>
     <h2>well come to my personal blog</h2>
-
+    <nav>
+        <ul>
+            <li>
+                <form method="post" action="{% url 'accounts:logout' %}">
+                    <input type="submit" value="logout">
+                </form>
+            </li>
+        </ul>
+    </nav>
 </body>
 </html>
